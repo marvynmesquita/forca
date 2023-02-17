@@ -64,6 +64,7 @@ const useWordle = (solution) => {
     }
 
     const handleKeyUp = ({ key }) => {
+        const keypad = document.querySelectorAll('button')
         if (key === 'Enter'){
             if(turn > solution.length){
                 console.log('Você usou todas as suas tentativas')
@@ -93,6 +94,11 @@ const useWordle = (solution) => {
                 })
             }
         }
+        keypad.forEach(keyChild => {
+            if(key === (keyChild.textContent)){
+                keyChild.classList.add('bounce-button')
+            }
+        })
     }
 
     return {turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyUp}

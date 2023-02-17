@@ -23,13 +23,10 @@ export default function Wordle({ solution }) {
         return () => window.removeEventListener('keyup', handleKeyUp)
     }, [handleKeyUp, isCorrect, turn, solution])
 
-    useEffect(()=> {
-        console.log(guesses, turn, isCorrect)
-    }, [guesses, turn, isCorrect])
     return (
         <div>
             <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} solution={solution}/>
-            <Keypads usedKeys={usedKeys}/>
+            <Keypads usedKeys={usedKeys} handleKeyUp={handleKeyUp}/>
             {showModal && <Modal isCorrect={isCorrect} turn={turn} solution={solution}/>}
         </div>
         

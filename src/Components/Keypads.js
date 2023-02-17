@@ -1,38 +1,48 @@
 import React, { useEffect, useState } from 'react'
 
+
 let keys = {
     "letters": [
-        {"key":"a"},
-        {"key":"b"},
-        {"key":"c"},
-        {"key":"d"},
+        {"key":"q"},
+        {"key":"w"},
         {"key":"e"},
+        {"key":"r"},
+        {"key":"t"},
+        {"key":"y"},
+        {"key":"u"},
+        {"key":"i"},
+        {"key":"o"},
+        {"key":"p"},
+        {"key":"a"},
+        {"key":"s"},
+        {"key":"d"},
         {"key":"f"},
         {"key":"g"},
         {"key":"h"},
-        {"key":"i"},
         {"key":"j"},
         {"key":"k"},
         {"key":"l"},
-        {"key":"m"},
-        {"key":"n"},
-        {"key":"o"},
-        {"key":"p"},
-        {"key":"q"},
-        {"key":"r"},
-        {"key":"s"},
-        {"key":"t"},
-        {"key":"u"},
-        {"key":"v"},
-        {"key":"w"},
+        {"key":"ç"},
+        {"key":"z"},
         {"key":"x"},
-        {"key":"y"},
-        {"key":"z"}
+        {"key":"c"},
+        {"key":"v"},
+        {"key":"b"},
+        {"key":"n"},
+        {"key":"m"},
+        {"key":"Enter"},
+        {"key":"Backspace"}
     ]
 }
 
-export default function Keypads({ usedKeys }) {
+
+export default function Keypads({ usedKeys, handleKeyUp }) {
     const [letters, setLetters] = useState(null)
+    const virtualKey = (e) => {
+        console.log((e.currentTarget.textContent))
+        const key= (e.currentTarget.textContent)
+        handleKeyUp({key})
+    }
 
     useEffect(() => {setLetters(keys.letters);})
   return (
@@ -40,7 +50,7 @@ export default function Keypads({ usedKeys }) {
         {letters && letters.map((l) => {
             let color = usedKeys[l.key]
             return(
-                <button className={color} key={l.key}>{l.key}</button>
+                <button className={color} key={l.key} onClick={(e) => virtualKey(e)}>{l.key}</button>
             )
         })}
     </div>

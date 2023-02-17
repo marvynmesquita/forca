@@ -83,8 +83,14 @@ button{
     line-height: 50px;
     text-align: center;
 }
+.keypad > button:last-child{
+    width: 90px;
+}
 
 .keypad > button:focus {
+    animation: bounce 0.2s ease-in-out forwards;
+}
+.keypad > .bounce-button {
     animation: bounce 0.2s ease-in-out forwards;
 }
 

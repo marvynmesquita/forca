@@ -1,16 +1,25 @@
 import React from 'react'
 import { useState } from 'react'
+import axios from 'axios'
 
 export default function Modal({ isCorrect, turn, solution }) {
     const [meaning, setMeaning] = useState('')
-    const dicio = require('dicio-br')();
+    var entry;
+    var XMLParser = require('react-xml-parser');
+    var parse = require('html-react-parser')
     const showMeaning = async () => {
-        const entry = await dicio(solution)
-        setMeaning(entry)
-        console.log(entry)
-        return        
+        await axios.get('https://api.dicionario-aberto.net/word/' + solution)
+            .then(response => {
+                if (response.data[0]) {
+                    entry = response.data[0].xml
+                    var xml = new XMLParser().parseFromString(entry);
+                    entry = xml.getElementsByTagName('def')[0].value
+                    setMeaning(`<p>definição:</br>${entry}</p>`)
+                }
+            })
+        return
     }
-    showMeaning();
+    {showMeaning()}
   return (
     <div className='modal'>
         {isCorrect && (
@@ -18,14 +27,14 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <h1>Você acertou!</h1>
                 <p>A palavra era <span className='solution'>{solution}</span></p>
                 <p>Você descobriu em {turn} chances</p>
-                <p>{meaning}</p>
+                {parse(meaning)}
             </div>
         )}
         {!isCorrect && ( 
             <div>
                 <h1>Você não acertou</h1>
                 <p>A palavra era <span className='solution'>{solution}</span></p>
-                <p>{meaning}</p>
+                {parse(meaning)}
             </div>
         )}
         {solution === undefined && (
