@@ -7,6 +7,7 @@ export default function Modal({ isCorrect, turn, solution }) {
     var entry;
     var XMLParser = require('react-xml-parser');
     var parse = require('html-react-parser')
+    const refresh = () => window.location.reload(true)
     const showMeaning = async () => {
         await axios.get('https://api.dicionario-aberto.net/word/' + solution)
             .then(response => {
@@ -28,6 +29,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p>A palavra era <span className='solution'>{solution}</span></p>
                 <p>Você descobriu em {turn} chances</p>
                 {parse(meaning)}
+                <button onClick={refresh}>JOGUE NOVAMENTE</button>
             </div>
         )}
         {!isCorrect && ( 
@@ -35,6 +37,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <h1>Você não acertou</h1>
                 <p>A palavra era <span className='solution'>{solution}</span></p>
                 {parse(meaning)}
+                <button onClick={refresh}>JOGUE NOVAMENTE</button>
             </div>
         )}
         {solution === undefined && (

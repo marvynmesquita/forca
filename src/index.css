@@ -147,6 +147,14 @@ button{
     color: #33691E;
     font-weight: bold;
 }
+.modal button{
+    background: #33691E ;
+    border-color: #33691E;
+    color: #FAFAFA;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+}
 
 @keyframes flip{
     0%{
