@@ -133,7 +133,7 @@ button{
 }
 .modal div{
     max-width: 480px;
-    max-height: 99%;
+    max-height: 90%;
     background-color: #263238;
     padding: 40px;
     border-radius: 10px;
