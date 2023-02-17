@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
+import GoogleAd from './GoogleAd'
 
 export default function Modal({ isCorrect, turn, solution }) {
     const [meaning, setMeaning] = useState('')
@@ -30,6 +31,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p>Você descobriu em {turn} chances</p>
                 {parse(meaning)}
                 <button onClick={refresh}>JOGUE NOVAMENTE</button>
+                <GoogleAd slot="9119226362" googleAdId="ca-pub-2421102242404216"/>
             </div>
         )}
         {!isCorrect && ( 
@@ -38,6 +40,7 @@ export default function Modal({ isCorrect, turn, solution }) {
                 <p>A palavra era <span className='solution'>{solution}</span></p>
                 {parse(meaning)}
                 <button onClick={refresh}>JOGUE NOVAMENTE</button>
+                <GoogleAd slot="9119226362" googleAdId="ca-pub-2421102242404216"/>
             </div>
         )}
         {solution === undefined && (

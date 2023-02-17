@@ -8,6 +8,8 @@ body {
     text-align: center;
     background-color: #263238;
     color: #FAFAFA;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 button{
@@ -15,7 +17,6 @@ button{
     background: transparent;
     cursor: pointer;
 }
-
 .row{
     text-align: center;
     display: flex;
@@ -132,11 +133,29 @@ button{
 }
 .modal div{
     max-width: 480px;
+    max-height: 99%;
     background-color: #263238;
     padding: 40px;
     border-radius: 10px;
-    margin: 10% auto;
+    margin: 1% auto;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.adsbygoogle {
+    min-width: 250px;
+    box-shadow: none !important;
+}
+.modal .ads {
+    box-shadow: none;
+}
+.aswift_2_host{
+    box-shadow: none;
+}
+iframe{
+    box-shadow: none;
 }
 .modal p {
     font-size: 0.8em;
