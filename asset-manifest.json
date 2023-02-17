@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/forca/static/css/main.d5155a06.css",
-    "main.js": "/forca/static/js/main.0fad5c01.js",
+    "main.css": "/forca/static/css/main.f24dc868.css",
+    "main.js": "/forca/static/js/main.fbadcc74.js",
     "static/js/787.fff79410.chunk.js": "/forca/static/js/787.fff79410.chunk.js",
     "static/media/palavras.txt": "/forca/static/media/palavras.00a4a41a43d563689b46.txt",
+    "static/media/logo.png": "/forca/static/media/logo.f6094e96fec331d10c16.png",
     "index.html": "/forca/index.html",
-    "main.d5155a06.css.map": "/forca/static/css/main.d5155a06.css.map",
-    "main.0fad5c01.js.map": "/forca/static/js/main.0fad5c01.js.map",
+    "main.f24dc868.css.map": "/forca/static/css/main.f24dc868.css.map",
+    "main.fbadcc74.js.map": "/forca/static/js/main.fbadcc74.js.map",
     "787.fff79410.chunk.js.map": "/forca/static/js/787.fff79410.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d5155a06.css",
-    "static/js/main.0fad5c01.js"
+    "static/css/main.f24dc868.css",
+    "static/js/main.fbadcc74.js"
   ]
 }
