@@ -49,9 +49,15 @@ export default function Keypads({ usedKeys, handleKeyUp }) {
     <div className='keypad'>
         {letters && letters.map((l) => {
             let color = usedKeys[l.key]
-            return(
-                <button className={color} key={l.key} onClick={(e) => virtualKey(e)}>{l.key}</button>
-            )
+                if(l.key === 'Enter' || l.key === 'Backspace'){
+                    return (
+                        <button className={color} id={l.key} key={l.key} onClick={(e) => virtualKey(e)}>{l.key}</button>
+                    )
+                } else {
+                    return(
+                        <button className={color} key={l.key} onClick={(e) => virtualKey(e)}>{l.key}</button>
+                    )
+                }
         })}
     </div>
   )

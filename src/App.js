@@ -3,6 +3,7 @@ import axios from 'axios';
 import Wordle from './Components/Wordle';
 import raw from '../src/palavras.txt'; 
 import './App.css';
+import logo from './Assets/logo.png';
 
 function App() {
   const [palavra, setPalavra] = useState([])
@@ -32,7 +33,7 @@ useEffect(()=>{
     controller.abort()
     return (
       <div>
-        <h1>Forca</h1>
+        <img src={logo} className='logo'/>
         {palavra && <Wordle solution={palavra} />}
       </div>
     );
