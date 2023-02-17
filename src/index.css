@@ -78,7 +78,8 @@ button{
     animation: bounce 0.2s ease-in-out forwards;
 }
 .keypad{
-    max-width: 500px;
+    max-width: 600px;
+    width: 90%;
     margin: 20px auto;
 }
 
@@ -92,8 +93,11 @@ button{
     line-height: 50px;
     text-align: center;
 }
+
+
+
 .keypad > #Enter, #Backspace{
-    width: 150px;
+    width: 40% !important;
 }
 
 .keypad > button:focus {
