@@ -1,3 +1,3 @@
 Projeto criado como estudo
 
-disponivel em marvynmesquita.github.io/forca para teste
+disponivel em https://marvynmesquita.github.io/forca para teste
